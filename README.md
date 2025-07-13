@@ -31,23 +31,22 @@ Personal portfolio website made with Django framework in the backend, and with C
 
 
 ## 🔗 Links
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/burhanmohammad)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/elaiyarani-s)
 
 
 ## 🛠 Skills
-Javascript, HTML, CSS, python, Django, Bootstrap...
+Javascript, HTML, CSS, python, Django, Bootstrap 4.6
 
 
-# Hi, I'm Mohammad Burhan! 👋
+# Hi, I'm Elaiyarani Soundararajan! 👋
 
 
 ## 🚀 About Me
-I'm a full stack developer...
-
+I am python web developer
 
 ## Feedback
 
-If you have any feedback, please reach out to us at burhanmohammad1234@out.com
+If you have any feedback, please reach out to us at elaiyarani.s@gmail.com
 
 
 ## Tech Stack
@@ -62,7 +61,7 @@ If you have any feedback, please reach out to us at burhanmohammad1234@out.com
 Clone the project
 
 ```bash
-  git clone https://github.com/BurhanMohammad/Django-portfilio-website.git
+  git clone https://github.com/elaiyarani-s/portfolio.git
 ```
 
 Go to the project directory
@@ -91,5 +90,5 @@ Start the server
 
 ## Authors
 
-- [@Mohammad Burhan](https://github.com/BurhanMohammad)
+- [@Elaiyarani Soundararajan](https://github.com/elaiyarani-s)
 
