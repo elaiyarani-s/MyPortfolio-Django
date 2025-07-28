@@ -218,7 +218,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background-image: url("../img/tamalsen-home-cover.jpg");
+  background-image: url("../img/home-cover.jpg");
    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1119,4 +1119,42 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+.btn-outline-blue {
+  color: #149ddd;
+  border-color: #149ddd;
+}
+
+.btn-outline-blue:hover {
+  background-color: #149ddd;
+  color: white;
+  border-color: #149ddd;
+}
+
+:root {
+  --custom-btn-color:#149ddd;       /* Light mode text & border */
+  --custom-btn-hover-bg: #149ddd;    /* Light mode hover background */
+  --custom-btn-hover-text: #fff;     /* Light mode hover text */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --custom-btn-color: #66b2ff;      /* Dark mode text & border */
+    --custom-btn-hover-bg: #66b2ff;   /* Dark mode hover background */
+    --custom-btn-hover-text: #000;    /* Dark mode hover text */
+  }
+}
+
+.btn-outline-blue {
+  color: var(--custom-btn-color);
+  border-color: var(--custom-btn-color);
+  background-color: transparent;
+}
+
+.btn-outline-blue:hover,
+.btn-outline-blue:focus {
+  background-color: var(--custom-btn-hover-bg);
+  color: var(--custom-btn-hover-text);
+  border-color: var(--custom-btn-hover-bg);
 }
