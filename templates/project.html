@@ -1,27 +1,23 @@
-{% extends 'home.html' %}
-{% load static %}
-{% block title %}My Projects{% endblock  %}
+{% extends 'home.html' %} 
+{% load static %} 
+{% block title %}My Projects{% endblock %} 
 {% block content %}
-   <svg class="svg-curve" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-100 79C-100 79 218.416 23.165 693.5 23.165C1168.58 23.165 1487 79 1487 79V0H-100V79Z"></path>
-      </svg>
+<svg class="svg-curve" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-100 79C-100 79 218.416 23.165 693.5 23.165C1168.58 23.165 1487 79 1487 79V0H-100V79Z"></path>
+</svg>
 
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container" id="project1"></div>
+    <div class="container" id="project2"></div>
+    <div class="container" id="project3"></div>
+</section>
 
- <section id="portfolio-details" class="portfolio-details">
-      <div class="container" id="project1"></div>
-<div class="container" id="project2"></div>
-<div class="container" id="project3"></div>
-    </section>
+<div class="h-100 d-flex align-items-end justify-content-end py-3">
+    <a href="javascript:history.go(-1)" class="btn btn-outline-blue rounded-pill mb-5">Back</a>
+</div>
 
+<svg class="svg-curve" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
+    <path d="M-100 0C-100 0 218.416 55.835 693.5 55.835C1168.58 55.835 1487 0 1487 0V79H-100V0Z"></path>
+</svg>
 
-  <div class="h-100 d-flex align-items-end justify-content-end py-3">
-<a href="javascript:history.go(-1)" class="btn btn-outline-blue rounded-pill mb-5" >Back</a>    
-  </div>
- 
-      
-    
-    <svg class="svg-curve" viewBox="0 0 1440 79" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-100 0C-100 0 218.416 55.835 693.5 55.835C1168.58 55.835 1487 0 1487 0V79H-100V0Z"></path>
-    </svg>
-
-{% endblock  %}
+{% endblock %}
