@@ -254,3 +254,133 @@
   new PureCounter();
 
 })()
+
+
+const projectData = [
+  {
+    id: "project1",
+    images: [
+      "static/img/portfolio/portfolio-details-1.png",
+      "static/img/portfolio/portfolio-details-2.png",
+      "static/img/portfolio/portfolio-details-3.png"
+    ],
+    info: {
+      category: "Website Development",
+      date: "01 March, 2020",
+      url: "https://elaiyarani-s.github.io/MyPortfolio/",
+      urlText: "MyPortfolio"
+    },
+    description: {
+      title: "My Personal Portfolio",
+      points: [
+        "Developed a personal portfolio website using Javascript, HTML, CSS and Bootstrap 5.",
+        "The webpage uses dynamic cards that injects data from the javascript files in the experience and project sections",
+        "Dark/light theme toggle",
+        "Responsive across all screens"
+      ]
+    }
+  },
+  {
+    id: "project2",
+    images: [
+      "static/img/portfolio/portfolio-details-4.png",
+      "static/img/portfolio/portfolio-details-5.png",
+      "static/img/portfolio/portfolio-details-6.png"
+    ],
+    info: {
+      category: "Website Development",
+      date: "23 July, 2025",
+      url: "https://reha-radio.onrender.com",
+      urlText: "REHA Radio"
+    },
+    description: {
+      title: "REHA Radio",
+      points: [
+        "Developed an online platform for streaming online tamil fm online radio stations using Django, Javascript, HTML, CSS and Bootstrap 5.",
+        "The webpage uses dynamic cards that injects data from the javascript files for each station.",
+        "Real time public chat using Channels + Redis + Daphne (ASGI server)",
+        "Dark/light theme toggle",
+        "Responsive across all screens"
+      ]
+    }
+  },
+  {
+    id: "project3",
+    images: [
+      "static/img/portfolio/portfolio-details-1.png",
+      "static/img/portfolio/portfolio-details-2.png",
+      "static/img/portfolio/portfolio-details-3.png"
+    ],
+    info: {
+      category: "Website Development",
+      date: "18 July, 2025",
+      url: "https://github.com/elaiyarani-s/SkillSwap.git",
+      urlText: "MyPortfolio"
+    },
+    description: {
+      title: "My Personal Portfolio",
+      points: [
+        "Developed a skill sharing platform using Django, Javascript, HTML, CSS and Bootstrap 5.",
+        "Dark/light theme toggle",
+        "Responsive across all screens"
+      ]
+    }
+  }
+];
+
+class ProjectViewer {
+  constructor(projects) {
+    this.projects = projects;
+  }
+
+  renderAll() {
+    this.projects.forEach(project => this.renderProject(project));
+  }
+
+  renderProject(project) {
+    const container = document.getElementById(project.id);
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="row gy-4">
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              ${project.images.map(img => `
+                <div class="swiper-slide">
+                  <img src="${img}" alt="">
+                </div>
+              `).join("")}
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>Project information</h3>
+            <ul>
+              <li><strong>Category</strong>: ${project.info.category}</li>
+              <li><strong>Project date</strong>: ${project.info.date}</li>
+              <li><strong>Project URL</strong>: 
+                <a href="${project.info.url}" target="_blank" rel="noopener noreferrer">${project.info.urlText}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>${project.description.title}</h2>
+            <ul>
+              ${project.description.points.map(point => `<li>${point}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Swiper initialization
+    
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const viewer = new ProjectViewer(projectData);
+  viewer.renderAll();
+});
