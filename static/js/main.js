@@ -1,3 +1,30 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('darkModeToggle');
+  const root = document.documentElement;
+
+  function updateTheme(isDark) {
+    root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+    toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  const storedPreference = localStorage.getItem('dark-mode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  let isDark = storedPreference === 'enabled' || (storedPreference === null && prefersDark);
+
+  updateTheme(isDark);
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      isDark = !isDark;
+      updateTheme(isDark);
+    });
+  }
+});
+
+
+
 (function () {
     "use strict";
 
@@ -377,3 +404,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const viewer = new ProjectViewer(projectData);
     viewer.renderAll();
 });
+

@@ -1,8 +1,11 @@
 from django.db import models
+from django.utils.html import format_html
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
-
+    class Meta:
+        verbose_name_plural = "Tags"
     def __str__(self):
         return self.name
 
@@ -13,6 +16,9 @@ class Project(models.Model):
     github_link = models.URLField(blank=True)
     detail_url = models.URLField(blank=True)
     tags = models.ManyToManyField(Tag, related_name='projects', blank=True)
+
+    class Meta:
+        ordering = ['-id'] 
 
     def __str__(self):
         return self.title
@@ -32,6 +38,9 @@ class ContactMessage(models.Model):
     subject = models.CharField(max_length=150)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return f"Message from {self.name} ({self.email})"

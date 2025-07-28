@@ -18,14 +18,6 @@ from django.urls import path
 from home import views
 
 
-
-# django admin changes
-admin.site.site_header = "Login to Elaiyarani"
-admin.site.site_title = "Welocom to DashBord"
-admin.site.index_title = "Welocom to Portal"
-
-
-
 urlpatterns = [
     path('', views.index, name='index'),
     # path('project/', views.project, name='project'),  # example route

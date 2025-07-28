@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'home',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -130,3 +132,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# settings.py
+ADMIN_SITE_HEADER = "My Portfolio Admin"
+ADMIN_SITE_TITLE = "Portfolio Admin Portal"
+ADMIN_INDEX_TITLE = "Dashboard"
