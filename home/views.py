@@ -1,33 +1,29 @@
-from django.shortcuts import render
-from . import models  # Import the models module
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+from .models import Project, Tag
 
-# Create your views here.
 
+from .models import Project, Tag
 
-def home(request):
-    #contact form database
-    # if request.method == 'POST':
-    #     name == request.POST['name']
-    #     email == request.POST['email']
-    #     subject == request.POST['subject']
-    #     message == request.POST['message']
-    #     contact = models.Home(name=name, email=email, subject=subject, message=message)
-    #     contact.save()
-    return render(request, 'home.html')
+def index(request):
+    projects = Project.objects.prefetch_related('images', 'tags').all()
+    tags = Tag.objects.all()
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/#contact')
+    else:
+        form = ContactForm()
+
+    return render(request, 'index.html', {
+        'projects': projects,
+        'tags': tags,
+        'form': form,
+    })
 
 
 def project(request):
-    return render(request, 'project.html')
-
-
-def contact(request):
-    #contact form database
-    if request.method == "POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        subject = request.POST['subject']
-        message = request.POST['message']
-        contact = models.Contact(name=name, email=email, subject=subject, message=message)
-        contact.save()
-    return render(request, 'home.html')
-
+    projects = Project.objects.prefetch_related('images', 'tags').all()
+    return render(request, 'project.html', {'projects': projects})

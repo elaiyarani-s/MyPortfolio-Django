@@ -1154,3 +1154,10 @@ section {
     color: var(--custom-btn-hover-text);
     border-color: var(--custom-btn-hover-bg);
 }
+
+.card-img-top,
+.portfolio-wrap img {
+  height: 30vh;
+  object-fit: contain;
+  width: 100%;
+}
