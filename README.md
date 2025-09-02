@@ -1,6 +1,3 @@
-
----
-
 ## 📌 `MyPortfolio-Django`
 
 ```markdown
